@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html layout:decorator="layout" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout ="http://www.ultraq.net.nz/tymeleaf/layout">
+	<div id="contenido" class="col-8" layout:fragment="contenido">
+		<h1>Login</h1>
+		<form action="/adminedit" method="POST">
+			<ul class="list-unstyled">
+				<li><input type="text" name="user" placeholder="Usuario"></input></li>
+				<li><input type="password" name="password" placeholder="Contraseña"></input></li>
+				<li><button type="submit">Enviar</button></li>
+			</ul>
+		</form>
+	</div> 
+</html>

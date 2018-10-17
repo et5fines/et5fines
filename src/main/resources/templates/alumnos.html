@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html layout:decorator="layout" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout ="http://www.ultraq.net.nz/tymeleaf/layout">
+	<div id="contenido" class="col-8" layout:fragment="contenido">
+			
+			<h1 class="my-4">Alumnos
+            <small>Novedades</small>
+          	</h1>
+
+          <!-- Blog Post -->
+          <div class="card mb-4" th:each="novedad: ${listaDeNovedades}" >
+           
+            <div class="card-body">
+              <h2 class="card-title" th:text="${novedad.titulo_novedad}"></h2>
+              <h1><small th:text="${novedad.subtitulo_novedad}"></small> </h1>
+              <p class="card-text" th:text="${novedad.cuerpo_novedad}"></p>              
+            </div>
+            <div class="card-footer text-muted" th:text="${novedad.fecha_novedad}">                         
+            </div>
+          </div>
+       
+	</div>
+</html>

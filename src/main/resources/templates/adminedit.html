@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html layout:decorator="layout" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout ="http://www.ultraq.net.nz/tymeleaf/layout">
+	<div id="contenido" class="col-8" layout:fragment="contenido">
+		<!-- Page Content -->
+   
+	   	<div class="container">
+	   		 <div class="row">
+	             		
+	           <!-- Blog Post -->
+	           <h1 class="my-4">
+	           	ADMIN          
+          		</h1>
+			   <div class="card mb-4">
+			  	           			            
+			        <div class="card-body">
+			             <h1>Formulario Noticias</h1>
+			             <form action="/addnoticia" method="POST">
+			             	<ul id="formadmin" class="list-unstyled">
+			             		<li><input class="ancho" type="text" name="titulo_noticia" placeholder="Titulo de Noticia"></input></li>
+			             		<li><input class="ancho" type="text" name="subtitulo_noticia" placeholder="Subtitulo de Noticia"></input></li>
+			             		<li><textarea class="ancho alto" name="cuerpo_noticia" placeholder="Cuerpo de Noticia" ></textarea></li>
+			             		<li><input class="ancho" type="text" name="fecha_noticia" placeholder="Publicado el 10 de Mayo, 2018 "></input></li>
+			             		<li><button type="submit">Cargar</button></li>
+			             	</ul>
+			             </form>
+					</div>
+					<div class="card-body">
+			            <h1>Formulario Novedades Alumnos</h1> 
+			            <form action="/addnovedad" method="POST">
+			            	<ul id="formadmin" class="list-unstyled">
+				            	<li><input class="ancho" type="text" placeholder="Titulo de Novedad" name="titulo_novedad"></input></li>
+				            	<li><input class="ancho" type="text" placeholder="Subtitulo de Novedad" name="subtitulo_novedad"></input></li>
+				            	<li><textarea class="ancho" placeholder="Cuerpo de Novedad" name="cuerpo_novedad"></textarea></li>
+				            	<li><input class="ancho" type="text" name="fecha_novedad" placeholder="Publicado el 10 de Mayo, 2018 "></input></li>
+				            	<li><button type="submit">Cargar</button></li>
+				            </ul>	
+			            </form>
+					</div>								          					
+				</div>
+				
+				<form action="borrarnoticias" method="POST" >
+				<button type="submit">BORRAR NOTICIAS</button>
+				</form>
+				<form action="deleteNovedad" method="POST" >
+				<button type="submit">BORRAR NOVEDADES</button>
+				</form>
+				
+			</div>
+		</div> 
+	</div> 
+</html>

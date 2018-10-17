@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html layout:decorator="layout" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout ="http://www.ultraq.net.nz/tymeleaf/layout">
+	<div id="contenido" class="col-8" layout:fragment="contenido">
+		<!-- Page Content -->
+   
+	   	<div class="container">
+	   		 <div class="row">
+	             		
+	           <!-- Blog Post -->
+	           <h1 class="my-4">
+	           	ADMIN BORRAR        
+          		</h1>
+			   
+			   <form action="/deletenoticia" method="POST">
+					<select name="baresBorrar">
+						<option th:each="noticia: ${listaDeNoticias}" th:value="${noticia.titulo_noticia}" ><p th:text="${noticia.titulo_noticia}"></p></option>
+					</select>
+					
+					<button type="submit">BORRAR</button>
+				</form>	
+				
+				
+				
+			</div>
+		</div> 
+	</div> 
+</html>

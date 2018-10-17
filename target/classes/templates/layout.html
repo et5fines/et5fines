@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"  layout:fragment="allpage" xmlns:th="http://www.thymeleaf.org" xmlns:layout ="http://www.ultraq.net.nz/tymeleaf/layout">
+
+  <head>
+
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+	
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico"></link>
+	
+    <title>Blog Home - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css" rel="stylesheet"></link>
+    <link href="csshavok.css" rel="stylesheet"></link>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <img src="escudo.jpg"></img>
+      <div class="container">      	
+        <a class="navbar-brand" href="/">Escuela Técnica N°5</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Inicio
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/alumnos">Alumnos</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/requisitos">Requisitos</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" >
+
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8" layout:fragment="contenido">
+
+          <h1 class="my-4">Plan FinEs
+            <small>aspirantes</small>
+          </h1>
+
+          <!-- Blog Post -->
+          <div class="card mb-4" th:each="noticia: ${listaDeNoticias}" >
+            <img class="card-img-top" src="fines.png" alt="Card image cap"></img>
+            <div class="card-body">
+              <h2 class="card-title" th:text="${noticia.titulo_noticia}"></h2>
+              <h1><small th:text="${noticia.subtitulo_noticia}"></small> </h1>
+              <p class="card-text" th:text="${noticia.cuerpo_noticia}"></p>
+              <a href="/requisitos" class="btn btn-primary">Requisitos &rarr;</a>
+            </div>
+            <div class="card-footer text-muted" th:text="${noticia.fecha_noticia}">
+                          
+            </div>
+          </div>        
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+      
+          <!-- Categories Widget -->
+          <div class="card my-4" layout:fragment="widgets">
+            <h5 class="card-header">CURSADA</h5>
+            <div class="card-body">
+              <div class="row">
+	                <table class="table-borderless table-striped">
+					  <tr>
+					    <th>MATERIA/S</th>
+					    <th>DIA</th>
+					    <th>HORARIO</th>
+					  </tr>
+					  <tr>
+					    <td>Psic/Soc/Filo</td>
+					    <td>Lunes</td>
+					    <td>19:00 a 21:00</td>
+					  </tr>
+					  <tr>
+					    <td>Contables</td>
+					    <td>Martes</td>
+					    <td>19:00 a 21:00</td>
+					  </tr>
+					  <tr>
+					    <td>Matematica</td>
+					    <td>Miercoles</td>
+					    <td>19:00 a 21:00</td>
+					  </tr>
+					  <tr>
+					    <td>Leng. y Lit.</td>
+					    <td>Jueves</td>
+					    <td>19:00 a 21:00</td>
+					</tr>
+					 <tr>
+					    <td>Derecho</td>
+					    <td>Viernes</td>
+					    <td>19:00 a 21:00</td>
+					</tr>
+					 <tr>
+					    <td>Lengua Extranjera</td>
+					    <td>Viernes</td>
+					    <td>19:00 a 21:00</td>
+					</tr>
+					</table>
+         	    </div>    
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <a href="/admin" class="text-white">Admin</a>
+        <p class="m-0 text-center text-white">
+        	<ul class="list-unstyled text-white text-right">
+        		<li>Telefonos: 4631-3115 4631-2130</li>
+        		<li>Email: et5fines@gmail.com</li>
+        		<li>Av. Juan Bautista Alberdi 1845 (C1406GRH) - Ciudad Autónoma de Buenos Aires</li>
+        	</ul>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
